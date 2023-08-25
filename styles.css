@@ -1,0 +1,67 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the navigation menu */
+nav {
+    background-color: #333;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    transition: all 0.3s ease; /* Add smooth animation to the links */
+}
+
+/* Add a hover effect */
+a:hover {
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Create a line that appears below the active link */
+a.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0); /* Initially, the line is not visible */
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+/* Add a hover effect to the line */
+a:hover::after {
+    transform: scaleX(1); /* Expand the line on hover */
+    transform-origin: left;
+}
+
+/* Style the active link */
+a.active {
+    background-color: #fff;
+    color: #333;
+}
